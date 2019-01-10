@@ -1,0 +1,26 @@
+{
+    "card1": {
+        "name": "Mosmortia",
+        "effectTarget": [
+            "Active Player",
+            "Location"
+        ],
+        "effect": [
+            "- 1 life",
+            "+ 1"
+        ],
+        "description": "Active player looses 1 life and add 1 naughty token to the location",
+        "flavourText": "here is some flavour text"
+    },
+    "card2": {
+        "name": "Septum Sempra",
+        "effectTarget": [
+            "All Player"
+        ],
+        "effect": [
+            "- 1 card"
+        ],
+        "description": "active player looses 1 health",
+        "flavourText": "here is some different flavour text"
+    }
+}

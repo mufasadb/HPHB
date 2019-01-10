@@ -1,0 +1,19 @@
+create board css
+create card css
+get images for villian tokens, lightning, gold and hearts
+display capcity of health
+create action handler:
+is choice?
+    yes -> select choice by description, follow action 
+    action formation -> who / who type / action / quantity / resource / optional per other resource
+        all players loose 2 life 
+        active player draws 1 card for each spell in her hand
+Event Card execution
+Create villian cards
+Villian card execution
+creat actionables
+loose health
+add villian
+discard a card
+draw a card
+gain a health

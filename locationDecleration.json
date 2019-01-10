@@ -1,0 +1,23 @@
+{
+    "location1": {
+    "name": "Diagon Alley",
+    "villianCapacity": 6,
+    "villianCurrent": 0,
+    "locationNumber": 1,
+    "family" : "game1"
+    },
+"location2": {
+    "name": "The Great Hall",
+    "villianCapacity": 7,
+    "villianCurrent": 0,
+    "locationNumber": 2,
+    "family" : "game1"
+    },
+"location3": {
+    "name": "Moaning Murtles Toilet",
+    "villianCapacity": 8,
+    "villianCurrent": 0,
+    "locationNumber": 3,
+    "family" : "game1"
+    }
+}

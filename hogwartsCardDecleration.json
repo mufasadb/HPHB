@@ -1,0 +1,258 @@
+{
+    "card1": {
+        "name": "Aloehamaroa",
+        "description": "Active player gains 1 gold",
+        "cardFamily": "All",
+        "cardType": "Spell",
+        "UID": "1",
+        "decisions": {
+            "exist": "False",
+            "options": [],
+            "text": ""
+        },
+        "actionObjects" : [{
+            "who": "Active",
+            "whoType": "Player",
+            "action": "Gains",
+            "quantity":"1",
+            "conditionalQuantity":"",
+            "resource":"Gold"
+        }]
+    },
+    "card2": {
+        "name": "Hedwig",
+        "description": "Active player gains 1 lightning",
+        "cardFamily": "Harry",
+        "cardType": "Ally",
+        "UID": "2",
+        "decisions": {
+            "exist": "False",
+            "options": [],
+            "text": ""
+        },
+        "actionObjects" : [{
+            "who": "Active",
+            "whoType": "Player",
+            "action": "Gains",
+            "quantity":"1",
+            "conditionalQuantity":"",
+            "resource":"Power"
+        }]
+    },
+    "card3": {
+        "name": "Pigwigeon",
+        "description": "Active player gains 1 lightning",
+        "cardFamily": "Ron",
+        "cardType": "Ally",
+        "UID": "3",
+        "decisions": {
+            "exist": "False",
+            "options": [],
+            "text": ""
+        },
+        "actionObjects" : [{
+            "who": "Active",
+            "whoType": "Player",
+            "action": "Gains",
+            "quantity":"1",
+            "conditionalQuantity":"",
+            "resource":"Power"
+        }]
+    },
+    "card4": {
+        "name": "Something",
+        "description": "Active player gains 1 lightning",
+        "cardFamily": 1,
+        "cardType": "Spell",
+        "UID": "4",
+        "decisions": {
+            "exist": "False",
+            "options": [],
+            "text": ""
+        },
+        "actionObjects" : [{
+            "who": "Active",
+            "whoType": "Player",
+            "action": "Gains",
+            "quantity":"1",
+            "conditionalQuantity":"",
+            "resource":"Power"
+        }]
+    },
+    "card5": {
+        "name": "Gun",
+        "description": "Active player gains 1 lightning",
+        "cardFamily": 1,
+        "cardType": "Item",
+        "UID": "5",
+        "decisions": {
+            "exist": "False",
+            "options": [],
+            "text": ""
+        },
+        "actionObjects" : [{
+            "who": "All",
+            "whoType": "Player",
+            "action": "Gains",
+            "quantity":"1",
+            "conditionalQuantity":"",
+            "resource":"Power"
+        }]
+    },
+    "card6": {
+        "name": "JuiceBox",
+        "description": "gain 1 lightning and 1 heart or 2 lightning",
+        "cardFamily": 1,
+        "cardType": "Item",
+        "UID": "6",
+        "decisions": {
+            "exist": "False",
+            "options": ["0,1", "2"],
+            "text": "gain 1 lightning and 1 heart or 2 lightning"
+        },
+        "actionObjects" : [{
+            "who": "Active",
+            "whoType": "Player",
+            "action": "Gains",
+            "quantity":"1",
+            "conditionalQuantity":"",
+            "resource":"Power"
+        },
+        {
+            "who": "All",
+            "whoType": "Player",
+            "action": "Gains",
+            "quantity":"1",
+            "conditionalQuantity":"",
+            "resource":"Health"
+        },
+        {
+            "who": "All",
+            "whoType": "Player",
+            "action": "Gains",
+            "quantity":"2",
+            "conditionalQuantity":"",
+            "resource":"Power"
+        }]
+    },
+    "card7": {
+        "name": "Dobby",
+        "description": "Remove 1 villian token from the location",
+        "cardFamily": 1,
+        "cardType": "Ally",
+        "UID": "7",
+        "decisions": {
+            "exist": "False",
+            "options": [],
+            "text": ""
+        },
+        "actionObjects" : [{
+            "who": "Location",
+            "whoType": "Location",
+            "action": "Remove",
+            "quantity":"1",
+            "conditionalQuantity":"",
+            "resource":"Villian"
+        }]
+    },
+    "card8": {
+        "name": "Cloak",
+        "description": "I dunno, magic shit",
+        "cardFamily": 1,
+        "cardType": "Item",
+        "UID": "8",
+        "decisions": {
+            "exist": "False",
+            "options": [],
+            "text": ""
+        },
+        "actionObjects" : [{
+            "who": "Active",
+            "whoType": "Player",
+            "action": "Gains",
+            "quantity":"1",
+            "conditionalQuantity":"",
+            "resource":"Gold"
+        }]
+    },
+    "card9": {
+        "name": "Bronze",
+        "description": "Remove 1 villian token from the location",
+        "cardFamily": 1,
+        "cardType": "Ally",
+        "UID": "9",
+        "decisions": {
+            "exist": "False",
+            "options": [],
+            "text": ""
+        },
+        "actionObjects" : [{
+            "who": "Location",
+            "whoType": "Location",
+            "action": "Remove",
+            "quantity":"1",
+            "conditionalQuantity":"",
+            "resource":"Villian"
+        }]
+    },
+    "card10": {
+        "name": "Silver",
+        "description": "I dunno, magic shit",
+        "cardFamily": 1,
+        "cardType": "Item",
+        "UID": "10",
+        "decisions": {
+            "exist": "False",
+            "options": [],
+            "text": ""
+        },
+        "actionObjects" : [{
+            "who": "Active",
+            "whoType": "Player",
+            "action": "Gains",
+            "quantity":"3",
+            "conditionalQuantity":"",
+            "resource":"Gold"
+        }]
+    },
+    "card11": {
+        "name": "Gold",
+        "description": "Remove 1 villian token from the location",
+        "cardFamily": 1,
+        "cardType": "Ally",
+        "UID": "11",
+        "decisions": {
+            "exist": "False",
+            "options": [],
+            "text": ""
+        },
+        "actionObjects" : [{
+            "who": "Active",
+            "whoType": "Player",
+            "action": "Gains",
+            "quantity":"4",
+            "conditionalQuantity":"",
+            "resource":"Gold"
+        }]
+    },
+    "card8": {
+        "name": "Platinum",
+        "description": "I dunno, magic shit",
+        "cardFamily": 1,
+        "cardType": "Item",
+        "UID": "12",
+        "decisions": {
+            "exist": "False",
+            "options": [],
+            "text": ""
+        },
+        "actionObjects" : [{
+            "who": "Active",
+            "whoType": "Player",
+            "action": "Gains",
+            "quantity":"5",
+            "conditionalQuantity":"",
+            "resource":"Gold"
+        }]
+    }
+}
