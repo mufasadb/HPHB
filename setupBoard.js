@@ -42,6 +42,7 @@ function playerCreator(number, character, game) {
     this.character = character;
     this.discardPile = [];
     this.lightning = 0;
+    this.playedCards = [];
     this.gold = 8;
     this.deck = playerCardSetup(character);
     this.hand = [];

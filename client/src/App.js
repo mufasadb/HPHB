@@ -55,6 +55,7 @@ class App extends Component {
         actions: actions
       })
     })
+    .then(this.grabdetails())
   }
   grabdetails() {
     fetch('/players')
@@ -93,7 +94,6 @@ class App extends Component {
         cardUID: card.UID
       })
     })
-      .then(console.log('bout to grab'))
       .then(this.grabdetails())
   }
 
@@ -101,7 +101,6 @@ class App extends Component {
     if (this.state.wizards[this.state.activePlayer].gold >= card.value) {
       this.sendCardPurchase(card);
     } else {
-      console.log('not')
       let newText = "you can't buy " + card.name + " because you only have " + this.state.wizards[this.state.activePlayer].gold
       this.setState({
         alert: {
@@ -153,7 +152,7 @@ class App extends Component {
             <HogwartsCards buyCard={this.buyCard} hogwartsCards={this.state.hogwartsCards} />
             <ChoiceModal card={this.state.cardChoiceCard} unModal={this.setModal} play={this.choiceHandler.bind(this)} />
             {alertObj}
-            <div >
+            <div className="endTurnContainer">
               <button className="button" onClick={() => this.endTurn()}> {endButtonWords}
               </button>
             </div>

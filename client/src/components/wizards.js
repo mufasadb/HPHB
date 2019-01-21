@@ -24,11 +24,11 @@ class Wizards extends Component {
             </div>)
         }
         return (
-            <div className="Wizard">
-                <div>
+            <div className="wizardContainer">
+                <div className="oneWizard">
                     {wizardObj}
                 </div>
-                <div>
+                <div className="playerNotification">
                     Alright, {activePlayer} it's your turn!
                 </div>
             </div>
