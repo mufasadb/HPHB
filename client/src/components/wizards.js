@@ -5,32 +5,34 @@ class Wizards extends Component {
     constructor() {
         super();
         this.state = {
-            wizards: [],
             currentSelection: 0
         };
     }
-    grabdetails() {
-        fetch('/players')
-            .then(res => res.json())
-            .then(wizards => this.setState({ wizards }, () => console.log("We've got the following wizards ", wizards)));
-    }
-    componentDidMount() {
-        this.grabdetails()
-    }
-
     render() {
+        let wizardObj = "";
+        let activePlayer = "";
+        if (this.props.activePlayer){
+            activePlayer = this.props.activePlayer
+        };
 
-        console.log('the wizards are now ', this.state.wizards)
+        // let handObj = "";
+        if (this.props.wizards) {
+            wizardObj = this.props.wizards.map((wizard, i) => <div key={i} >{wizard.character}
+                has {wizard.health} health, {wizard.gold} gold, {wizard.lightning}
+                lightning, and has {wizard.discardPile.length} discarded cards
+        <Hand playing={this.props.playing} hand={wizard.hand} activePlayer={this.props.activePlayer} currentPlayer={wizard.number}/>
+            </div>)
+        }
         return (
             <div className="Wizard">
                 <div>
-                    {this.state.wizards.map((wizard) => <div key={wizard.number}> {wizard.number}{wizard.character} has {wizard.health} health, {wizard.gold} gold, {wizard.lightning} lightning
-                    <Hand playing={this.props.playing} hand={wizard.hand} />
-                    </div> )}
+                    {wizardObj}
+                </div>
+                <div>
+                    Alright, {activePlayer} it's your turn!
                 </div>
             </div>
         );
     }
 }
-
 export default Wizards;

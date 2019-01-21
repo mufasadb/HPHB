@@ -11,7 +11,6 @@ class Hand extends Component {
     }
     selectCard(UID) {
         this.setState({ currentSelection: UID })
-        console.log('well this happened')
     }
     cardClass(UID) {
         let results = "card"
@@ -22,12 +21,16 @@ class Hand extends Component {
     }
 
     render() {
+        let classVariable = "";
+        if(this.props.activePlayer === this.props.currentPlayer){
+            
+        }
         return (
-            <div className="">
+          <div className={classVariable}>
                 and has the following cards
-                <div className="wizardHand"> {this.props.hand.map((card) =>
-                    <div className={this.cardClass(card.cardType)}
-                        onClick={() => this.props.playing(card)} key={card.index}> {card.name}
+                <div className="wizardHand"> {this.props.hand.map((card, index) =>
+                    <div key={index} className={this.cardClass(card.cardType)}
+                        onClick={() => this.props.playing(card)} > {card.name}
                     </div>)}
                 </div>
             </div>

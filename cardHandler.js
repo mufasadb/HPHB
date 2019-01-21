@@ -26,5 +26,15 @@ module.exports = {
         // console.log('we have a hand of length ', hand.length);
         // console.log('we have a discardPile of length ', discardPile.length);
         return ([deck, hand, discardPile])
+    },
+    purchaseCard: function (board, players, hogwartsCards, cardUID) {
+        if (hogwartsCards.faceUpCards.findIndex(x => x.UID === cardUID)) {
+            let selectedIndex = hogwartsCards.faceUpCards.findIndex(x => x.UID === cardUID);
+            let selectedCardPrice = parseInt(hogwartsCards.faceUpCards.find(x => x.UID === cardUID).value);
+            players[board.activePlayer].discardPile.push(hogwartsCards.faceUpCards[selectedIndex]);
+            hogwartsCards.faceUpCards.splice(selectedIndex, 1);
+            players[board.activePlayer].gold = players[board.activePlayer].gold - selectedCardPrice
+        }
+        return [board, players, hogwartsCards]
     }
 }

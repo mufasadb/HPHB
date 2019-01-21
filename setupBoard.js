@@ -42,7 +42,7 @@ function playerCreator(number, character, game) {
     this.character = character;
     this.discardPile = [];
     this.lightning = 0;
-    this.gold = 0;
+    this.gold = 8;
     this.deck = playerCardSetup(character);
     this.hand = [];
     this.deck = cardHandler.shuffleDeck(this.deck);
@@ -54,6 +54,7 @@ function playerCreator(number, character, game) {
 //create players
 const players = [new playerCreator(1, "Ron", 0), new playerCreator(1, "Harry", 0)]
 
+
 //hogwarts deck creator
 function hogwartsCreator(game) {
     const cards = Object.keys(hogwartsCards).map(function (_) { return hogwartsCards[_]; })
@@ -63,7 +64,7 @@ function hogwartsCreator(game) {
             results.push(cardCopier(cards[card]))
         }
     }
-    results = cardHandler.shuffleDeck(results)
+    faceDownCards = cardHandler.shuffleDeck(results)
     let faceUpCards = []
     for (let i = 0; i < 5; i++) {
         if (results[0]) {
@@ -71,15 +72,16 @@ function hogwartsCreator(game) {
             results.splice(0, 1)
         }
     }
-    let handOut = {
-        faceUpCards: faceUpCards,
-        faceDownCards: results.length - 6
-    }
-    return handOut
+    let deckCount = results.length
+    return {faceUpCards:faceUpCards, deckCount: deckCount, faceDownCards: faceDownCards}
 }
 
+//game number
+let gameNumber = 1
+//player Cap
+let playerCap = 2
 //make hogwarts deck
-let hogwartsDeck = hogwartsCreator(1);
+let hogwartsDeck = hogwartsCreator(gameNumber);
 
 
 
@@ -101,7 +103,7 @@ const boardState = {
     location: locationCards.location1,
     locationCount: 1,
     locationLimit: 3,
-    activePlayer: 1
+    activePlayer: 0
 };
 
 module.exports = {
@@ -113,5 +115,8 @@ module.exports = {
     },
     hogwartsCards: function () {
         return hogwartsDeck
+    },
+    playerCap: function () {
+        return playerCap
     }
 }

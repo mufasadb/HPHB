@@ -17,3 +17,25 @@ add villian
 discard a card
 draw a card
 gain a health
+create a 'played set'
+Create a end of turn setup
+    move all 'played' cards to teh discard pile
+    check if the location is villian full
+    check if any villians died
+
+
+card is selected
+if there isn't a choice,
+send the card and the specified choice (forced)
+    move the card to played
+    run the actions (multiple action)
+re-render the board
+
+if there is a choice
+display the modal
+get the choices
+player selects choice
+submit the card and the specified choice
+    move the card to played
+    run the actions
+re-render the board
