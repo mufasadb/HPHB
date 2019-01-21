@@ -4,17 +4,41 @@
   }
 .card {
     display:inline-block;
-    color:#444;
+    height: 100px;
+    color:#888;
     border:1px solid #CCC;
     background:#DDD;
     box-shadow: 0 0 5px -1px rgba(0,0,0,0.2);
     cursor:pointer;
     vertical-align:middle;
-    max-width: 100px;
+    width: 100px;
+    padding: 5px;
+    text-align: center;
+}
+.cardInactive {
+    display:inline-block;
+    height: 00px;
+    color:#555;
+    border:1px solid #CCC;
+    background:#555;
+    box-shadow: 0 0 5px -1px rgba(0,0,0,0.2);
+    cursor:pointer;
+    vertical-align:middle;
+    width: 100px;
     padding: 5px;
     text-align: center;
 }
 .activeCard {
     color:red;
     box-shadow: 0 0 5px -1px rgba(0,0,0,0.6);
+}
+.showModal {
+        top                   : '50%';
+        left                  : '50%';
+        right                 : 'auto';
+        bottom                : 'auto';
+        transform             : 'translate(-50%, -50%)';
+      }
+.hideModal {
+    display: none;
 }

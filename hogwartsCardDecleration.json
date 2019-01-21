@@ -2,6 +2,7 @@
     "card1": {
         "name": "Aloehamaroa",
         "description": "Active player gains 1 gold",
+        "value": "0",
         "cardFamily": "All",
         "cardType": "Spell",
         "UID": "1",
@@ -22,6 +23,7 @@
     "card2": {
         "name": "Hedwig",
         "description": "Active player gains 1 lightning",
+        "value": "0",
         "cardFamily": "Harry",
         "cardType": "Ally",
         "UID": "2",
@@ -42,6 +44,7 @@
     "card3": {
         "name": "Pigwigeon",
         "description": "Active player gains 1 lightning",
+        "value": "0",
         "cardFamily": "Ron",
         "cardType": "Ally",
         "UID": "3",
@@ -62,6 +65,7 @@
     "card4": {
         "name": "Something",
         "description": "Active player gains 1 lightning",
+        "value": "2",
         "cardFamily": 1,
         "cardType": "Spell",
         "UID": "4",
@@ -82,6 +86,7 @@
     "card5": {
         "name": "Gun",
         "description": "Active player gains 1 lightning",
+        "value": "2",
         "cardFamily": 1,
         "cardType": "Item",
         "UID": "5",
@@ -102,6 +107,7 @@
     "card6": {
         "name": "JuiceBox",
         "description": "gain 1 lightning and 1 heart or 2 lightning",
+        "value": "4",
         "cardFamily": 1,
         "cardType": "Item",
         "UID": "6",
@@ -138,6 +144,7 @@
     "card7": {
         "name": "Dobby",
         "description": "Remove 1 villian token from the location",
+        "value": "4",
         "cardFamily": 1,
         "cardType": "Ally",
         "UID": "7",
@@ -158,6 +165,7 @@
     "card8": {
         "name": "Cloak",
         "description": "I dunno, magic shit",
+        "value": "4",
         "cardFamily": 1,
         "cardType": "Item",
         "UID": "8",
@@ -178,6 +186,7 @@
     "card9": {
         "name": "Bronze",
         "description": "Remove 1 villian token from the location",
+        "value": "5",
         "cardFamily": 1,
         "cardType": "Ally",
         "UID": "9",
@@ -198,6 +207,7 @@
     "card10": {
         "name": "Silver",
         "description": "I dunno, magic shit",
+        "value": "6",
         "cardFamily": 1,
         "cardType": "Item",
         "UID": "10",
@@ -218,6 +228,7 @@
     "card11": {
         "name": "Gold",
         "description": "Remove 1 villian token from the location",
+        "value": "7",
         "cardFamily": 1,
         "cardType": "Ally",
         "UID": "11",
@@ -235,9 +246,10 @@
             "resource":"Gold"
         }]
     },
-    "card8": {
+    "card12": {
         "name": "Platinum",
         "description": "I dunno, magic shit",
+        "value": "3",
         "cardFamily": 1,
         "cardType": "Item",
         "UID": "12",

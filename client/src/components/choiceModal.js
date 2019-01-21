@@ -5,20 +5,28 @@ class ChoiceModal extends Component {
     constructor() {
         super();
         this.state = {
-            choices:{}
         };
     }
-    grabdetails() {
-        fetch('/choices')
-            .then(res => res.json())
-            .then(choices => this.setState({ choices }, () => console.log("retrieved the choices ", choices)));
-    }
     render() {
+        let showHideModal = "hideModal";
+        if (this.props.showHideModal) {
+            showHideModal = "showModal"
+        }
+        let bontent = ""
+        if(typeof variable !== 'undefined'){
+            bontent = this.props.card.decisions.text
+        }
         return (
-            <div className={this.props.showHideModal}>
-here's youre elaborate quesition
-<button>
-    </button>
+            <div className={showHideModal}>
+                here's youre elaborate quesition
+                {bontent}
+                <button>
+                    onClick = {this.props.play(this.props.card, 0)}
+                </button>
+                <button>
+                    onClick = {this.props.play(this.props.card, 1)}
+                </button>
+
             </div>
         );
     }
