@@ -16,7 +16,7 @@ class HogwartsCards extends Component {
         theObject = this.props.hogwartsCards.faceUpCards.map((card) => <div className="card" onClick={() => this.props.buyCard(card)} key={card.name}> {card.name}<br/>{card.value}</div>)
         }return (
             <div>
-                <div>
+                <div className="hogwartCardsContainer">
                     The hogwarts cards are
                 {theObject}
                 </div>

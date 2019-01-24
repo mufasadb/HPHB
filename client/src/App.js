@@ -27,7 +27,6 @@ class App extends Component {
         locationCount: 1,
         locationLimit: 3
       },
-      activePlayer: 0,
       alert: {
         show: false,
         text: ""
@@ -55,6 +54,7 @@ class App extends Component {
         actions: actions
       })
     })
+      .then(this.grabdetails())
   }
   grabdetails() {
     fetch('/players')
@@ -65,7 +65,6 @@ class App extends Component {
       .then(board => this.setState({ board }, () => console.log('The board state is ', board)));
     fetch('/hogwartsCards')
       .then(res => res.json())
-      .then(console.log("we did it reddit"))
       .then(hogwartsCards => this.setState({ hogwartsCards }, () => console.log("hogwartsCards are ", hogwartsCards)));
   }
   makeChoice(card) {
@@ -93,16 +92,16 @@ class App extends Component {
         cardUID: card.UID
       })
     })
-      .then(console.log('bout to grab'))
-      .then(this.grabdetails())
+    .then(console.log('buy card hit'))
+    .then(this.grabdetails())
+    console.log('hitting buy card')
   }
 
   buyCard(card) {
-    if (this.state.wizards[this.state.activePlayer].gold >= card.value) {
+    if (this.state.wizards[this.state.board.activePlayer].gold >= card.value) {
       this.sendCardPurchase(card);
     } else {
-      console.log('not')
-      let newText = "you can't buy " + card.name + " because you only have " + this.state.wizards[this.state.activePlayer].gold
+      let newText = "you can't buy " + card.name + " because you only have " + this.state.wizards[this.state.board.activePlayer].gold
       this.setState({
         alert: {
           show: true,
@@ -126,7 +125,7 @@ class App extends Component {
       },
       method: 'POST',
       body: JSON.stringify({
-        activePlayer: this.state.activePlayer
+        activePlayer: this.state.board.activePlayer
       })
     })
       .then(this.grabdetails())
@@ -134,10 +133,11 @@ class App extends Component {
   render() {
     let alertObj = "";
     let endButtonWords = "";
-    if (this.state.board.activePlayer === 0) {
+    if (this.state.board.activePlayer === -1) {
       endButtonWords = "Press to start the game";
     } else {
-      endButtonWords = "End " + this.state.board.activePlayer + "'s turn";
+      let playerVal = this.state.board.activePlayer + 1
+      endButtonWords = "End " + playerVal + "'s turn";
     }
     if (this.state.alert.show) {
       alertObj = <div className='delete-button' onClick={() => { if (window.confirm('Yo, dis too many dolla')) this.onCancel() }} />
@@ -153,7 +153,7 @@ class App extends Component {
             <HogwartsCards buyCard={this.buyCard} hogwartsCards={this.state.hogwartsCards} />
             <ChoiceModal card={this.state.cardChoiceCard} unModal={this.setModal} play={this.choiceHandler.bind(this)} />
             {alertObj}
-            <div >
+            <div className="endTurnContainer">
               <button className="button" onClick={() => this.endTurn()}> {endButtonWords}
               </button>
             </div>

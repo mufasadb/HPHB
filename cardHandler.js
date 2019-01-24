@@ -1,12 +1,17 @@
+function shuffle(deck){
+    let deckShuffled = [];
+    let ogDeck = JSON.parse(JSON.stringify(deck));
+    for (card in deck) {
+        let picked = Math.floor(Math.random() * (deck.length - card));
+        deckShuffled.push(ogDeck[picked]);
+        ogDeck.splice(picked, 1);
+    }
+    return deckShuffled
+}
+
 module.exports = {
     shuffleDeck: function (deck) {
-        let deckShuffled = [];
-        let ogDeck = JSON.parse(JSON.stringify(deck));
-        for (card in deck) {
-            let picked = Math.floor(Math.random() * (deck.length - card));
-            deckShuffled.push(ogDeck[picked]);
-            ogDeck.splice(picked, 1);
-        }
+        let deckShuffled = shuffle(deck)
         return deckShuffled;
     },
     playerDraw: function (deck, hand, discardPile, drawCount) {
@@ -16,7 +21,7 @@ module.exports = {
                 hand.push(deck[0]),
                     deck.splice(0, 1);
             } else {
-                deck = shuffleDeck(discardPile);
+                deck = shuffle(discardPile);
                 discardPile.splice(0, discardPile.length)
                 hand.push(deck[0]),
                     deck.splice(1, 1);
