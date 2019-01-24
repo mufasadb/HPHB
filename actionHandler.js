@@ -13,7 +13,7 @@ function modifyGold(player, quantity) {
     return player
 }
 function modifyLightning(player, quantity) {
-    player.lightning = player.gold + quantity
+    player.lightning = player.lightning + quantity
     return player
 }
 function modifyHealth(player, quantity) {
@@ -27,20 +27,20 @@ function modifyHealth(player, quantity) {
     return player
 }
 function handleAll(players, resource, quantity) {
-    if (resource = 'health') {
+    if (resource === 'Health') {
         for (let i = 0; i < players.length; i++) {
             players[i] = modifyHealth(players[i], quantity)
         }
     }
-    if (resource = 'gold') {
+    if (resource === 'Gold') {
         for (let i = 0; i < players.length; i++) {
             players[i] = modifyGold(players[i], quantity)
         }
-    } if (resource = 'lightning') {
+    } if (resource === 'Lightning') {
         for (let i = 0; i < players.length; i++) {
             players[i] = modifyLightning(players[i], quantity)
         }
-    }    if (resouce = 'draw') {
+    }    if (resource = 'Draw') {
         results = cardHanlder.playerDraw(players[i].deck, players[i].hand, players[i].discardPile, quantity)
         players[i].deck = results[0]
         players[i].hand = results[1]
@@ -50,16 +50,16 @@ function handleAll(players, resource, quantity) {
     return players
 }
 function handleSingle(board, players, resource, quantity) {
-    if (resource = 'health') {
+    if (resource === 'Health') {
         players[board.activePlayer] = modifyHealth(players[board.activePlayer], quantity)
     }
-    if (resource = 'gold') {
+    if (resource === 'Gold') {
         players[board.activePlayer] = modifyGold(players[board.activePlayer], quantity)
     }
-    if (resource = 'lightning') {
+    if (resource === 'Lightning') {
         players[board.activePlayer] = modifyLightning(players[board.activePlayer], quantity)
     }
-    if (resouce = 'draw') {
+    if (resource === 'Draw') {
         results = cardHandler.playerDraw(players[board.activePlayer].deck, players[board.activePlayer].hand, players[board.activePlayer].discardPile, quantity)
         players[board.activePlayer].deck = results[0]
         players[board.activePlayer].hand = results[1]
@@ -71,12 +71,11 @@ module.exports = {
     runAction: function (board, players, actionObject) {
         if (actionObject.whoType === 'Player') {
             if (actionObject.who === 'Active') {
-                players = handleSingle(board, players, actionObject.resource, actionObject.quantity)
+                players = handleSingle(board, players, actionObject.resource, parseInt(actionObject.quantity))
             } else if (actionObject.who === 'All'){
-                players = handleAll(board, players, actionObject.resource, actionObject.quantity)
+                players = handleAll(board, players, actionObject.resource, parseInt(actionObject.quantity))
             } else (console.log('action Object has an unreadable "who value"'))
         }
-        console.log(actionObject);
         return ([board, players])
     }
 }

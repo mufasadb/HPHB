@@ -10,9 +10,10 @@ class Wizards extends Component {
     }
     render() {
         let wizardObj = "";
-        let activePlayer = "";
-        if (this.props.activePlayer){
-            activePlayer = this.props.activePlayer
+        let activePlayerWords = "";
+        if (this.props.activePlayer >= 0){
+            let activePlayer = this.props.activePlayer + 1
+            activePlayerWords = "Alright player " + activePlayer + "it;s your turn"
         };
 
         // let handObj = "";
@@ -29,7 +30,7 @@ class Wizards extends Component {
                     {wizardObj}
                 </div>
                 <div className="playerNotification">
-                    Alright, {activePlayer} it's your turn!
+                    {activePlayerWords}
                 </div>
             </div>
         );

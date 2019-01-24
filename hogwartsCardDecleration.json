@@ -38,7 +38,7 @@
             "action": "Gains",
             "quantity":"1",
             "conditionalQuantity":"",
-            "resource":"Power"
+            "resource":"Lightning"
         }]
     },
     "card3": {
@@ -59,7 +59,7 @@
             "action": "Gains",
             "quantity":"1",
             "conditionalQuantity":"",
-            "resource":"Power"
+            "resource":"Lightning"
         }]
     },
     "card4": {
@@ -80,7 +80,7 @@
             "action": "Gains",
             "quantity":"1",
             "conditionalQuantity":"",
-            "resource":"Power"
+            "resource":"Lightning"
         }]
     },
     "card5": {
@@ -101,7 +101,7 @@
             "action": "Gains",
             "quantity":"1",
             "conditionalQuantity":"",
-            "resource":"Power"
+            "resource":"Lightning"
         }]
     },
     "card6": {
@@ -122,7 +122,7 @@
             "action": "Gains",
             "quantity":"1",
             "conditionalQuantity":"",
-            "resource":"Power"
+            "resource":"Lightning"
         },
         {
             "who": "All",
@@ -138,7 +138,7 @@
             "action": "Gains",
             "quantity":"2",
             "conditionalQuantity":"",
-            "resource":"Power"
+            "resource":"Lightning"
         }]
     },
     "card7": {

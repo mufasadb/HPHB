@@ -67,7 +67,7 @@ function hogwartsCreator(game) {
     }
     faceDownCards = cardHandler.shuffleDeck(results)
     let faceUpCards = []
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < 6; i++) {
         if (results[0]) {
             faceUpCards.push(results[0])
             results.splice(0, 1)
@@ -104,7 +104,7 @@ const boardState = {
     location: locationCards.location1,
     locationCount: 1,
     locationLimit: 3,
-    activePlayer: 0
+    activePlayer: -1
 };
 
 module.exports = {
