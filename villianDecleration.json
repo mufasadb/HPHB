@@ -1,0 +1,37 @@
+{
+    "villian1": {
+        "name": "Quirrel",
+        "description": "Active player Looses 1 life",
+        "cardFamily": "1",
+        "villianType": "villian",
+        "UID": "1",
+        "staticEffect": "",
+        "decisions": {
+            "exist": "False",
+            "options": [],
+            "text": ""
+        },
+        "actionObjects" : [{
+            "who": "Active",
+            "whoType": "Player",
+            "action": "Loses",
+            "quantity":"1",
+            "conditionalQuantity":"",
+            "resource":"Health"
+        }]
+    },
+    "villian2": {
+        "name": "Fenrear Greyback",
+        "description": "All players cannot gain health",
+        "cardFamily": "1",
+        "villianType": "creature",
+        "UID": "1",
+        "staticEffect":"noHealth",
+        "decisions": {
+            "exist": "False",
+            "options": [],
+            "text": ""
+        },
+        "actionObjects" : []
+    }
+}

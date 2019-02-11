@@ -15,18 +15,27 @@ class Wizards extends Component {
             let activePlayer = this.props.activePlayer + 1
             activePlayerWords = "Alright player " + activePlayer + "it;s your turn"
         };
-
         // let handObj = "";
         if (this.props.wizards) {
-            wizardObj = this.props.wizards.map((wizard, i) => <div key={i} >{wizard.character}
-                has {wizard.health} health, {wizard.gold} gold, {wizard.lightning}
-                lightning, and has {wizard.discardPile.length} discarded cards
-        <Hand playing={this.props.playing} hand={wizard.hand} activePlayer={this.props.activePlayer} currentPlayer={wizard.number}/>
+            wizardObj = this.props.wizards.map((wizard, i) => <div key={i} >
+            <div>{wizard.character}
+            </div>
+            <div>
+                health: {wizard.health} 
+                </div>
+                <div>
+                    gold: {wizard.gold}
+                    </div>
+                    <div> lightning: {wizard.lightning} </div>
+                    <div> deck: {wizard.deck.length}</div>
+                    <div> discard pile: {wizard.discardPile.length}</div>
+                    <div> cards played: {wizard.playedCards.length}</div>
+        <Hand playing={this.props.playing} hand={wizard.hand} activePlayer={this.props.activePlayer} currentPlayer={i}/>
             </div>)
         }
         return (
             <div className="wizardContainer">
-                <div className="oneWizard">
+                <div className="">
                     {wizardObj}
                 </div>
                 <div className="playerNotification">

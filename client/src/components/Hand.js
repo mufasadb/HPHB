@@ -19,19 +19,24 @@ class Hand extends Component {
         }
         return results
     }
+    onClickObject(card) {
+        if (this.props.activePlayer === this.props.currentPlayer) {
+            this.props.playing(card)
+        }
+    }
 
     render() {
-        let classVariable = "";
-        if(this.props.activePlayer === this.props.currentPlayer){
-            
+        let classVariable = "cardInactive";
+        if (this.props.activePlayer === this.props.currentPlayer) {
+            classVariable = "card"
         }
         return (
-          <div className={classVariable}>
-                and has the following cards
+            <div className="oneWizard">
                 <div className="wizardHand"> {this.props.hand.map((card, index) =>
-                    <div key={index} className={this.cardClass(card.cardType)}
-                        onClick={() => this.props.playing(card)} > {card.name}
-                    </div>)}
+                    <div key={index} className={classVariable} onClick={() => this.onClickObject(card)}>
+                        <h3>{card.name}</h3><br/>{card.description}
+                    </div>
+                )}
                 </div>
             </div>
         );

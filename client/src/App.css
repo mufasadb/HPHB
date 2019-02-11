@@ -2,9 +2,16 @@
     display: inline-flex; flex-direction: column;
     align-items: center; width: 100%;
   }
+/* .wizardContainer {
+    height: 105px;
+    width: 500 px;
+} */
+.oneWizard{
+    display: table;
+}
 .card {
-    display:inline-block;
-    height: 100px;
+    display: table-cell;
+    height: 120px;
     color:#888;
     border:1px solid #CCC;
     background:#DDD;
@@ -16,17 +23,32 @@
     text-align: center;
 }
 .cardInactive {
-    display:inline-block;
-    height: 00px;
-    color:#555;
+    display: table-cell;
+    height: 100px;
+    color:#888;
     border:1px solid #CCC;
-    background:#555;
+    background:#DDD;
     box-shadow: 0 0 5px -1px rgba(0,0,0,0.2);
     cursor:pointer;
     vertical-align:middle;
     width: 100px;
     padding: 5px;
     text-align: center;
+}
+.goldCircle{
+    background:#FFD700;
+    vertical-align: bottom;
+    float: right;  
+    border-radius: 50%;
+    height:20px;
+    width:20px;
+}
+.goldValues{
+    font-weight: bold;
+    color:black;
+}
+.oneWizard{
+    height: 112px;
 }
 .activeCard {
     color:red;

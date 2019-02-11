@@ -28,15 +28,12 @@ app.get('/hogwartsCards', (req, res) => {
     res.json(data);
 })
 app.post('/endTurn', function (req, res) {
-    if (board.activePlayer < 0) {
-        console.log('starting game')
-    } else {
-        console.log('ending turn')
-    }
+    console.log('ending turn')
     let results = turnHandler.endTurn(board, players, hogwartsCards, playerCap);
     board = results[0];
     players = results[1];
     hogwartsCards = results[2];
+    res.json('data');
 })
 app.post('/playcard', function (req, res) {
     let error = ""

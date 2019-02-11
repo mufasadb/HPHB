@@ -4,6 +4,7 @@ const hogwartsCards = require('./hogwartsCardDecleration.json');
 const locationCards = require('./locationDecleration.json');
 const eventCards = require('./eventDecleration.json');
 const cardHandler = require('./cardHandler.js');
+const villianPlayers = require('./villianDecleration.json');
 
 function cardCopier(variable) {
     let results = JSON.parse(JSON.stringify(variable));
@@ -58,23 +59,46 @@ const players = [new playerCreator(1, "Ron", 0), new playerCreator(1, "Harry", 0
 
 //hogwarts deck creator
 function hogwartsCreator(game) {
-    const cards = Object.keys(hogwartsCards).map(function (_) { return hogwartsCards[_]; })
-    let results = []
+    const cards = Object.keys(hogwartsCards).map(function (item) { return hogwartsCards[item]; })
+    let faceDownCards = []
     for (card in cards) {
         if (cards[card].cardFamily === game) {
-            results.push(cardCopier(cards[card]))
+            faceDownCards.push(cardCopier(cards[card]))
         }
     }
-    faceDownCards = cardHandler.shuffleDeck(results)
+    faceDownCards = cardHandler.shuffleDeck(faceDownCards)
     let faceUpCards = []
     for (let i = 0; i < 6; i++) {
-        if (results[0]) {
-            faceUpCards.push(results[0])
-            results.splice(0, 1)
+        if (faceDownCards[0]) {
+            faceUpCards.push(faceDownCards[0])
+            faceDownCards.splice(0, 1)
         }
     }
-    let deckCount = results.length
+    let deckCount = faceDownCards.length
     return {faceUpCards:faceUpCards, deckCount: deckCount, faceDownCards: faceDownCards}
+}
+
+
+//villianAdder
+
+function villianAdder(game) {
+    let villians = Object.keys(villianPlayers).map(function (item) { return villianPlayers[item]; })
+
+    for (villian in villians){
+        if(villians[villian].cardFamily === game){
+            villians.push(cardCopier[villian])
+        }
+    }
+    let activeVillians = []
+    villians = cardHandler.shuffleDeck(villians)
+    for (let i = 0; i < 2; i++) {
+        if (villians[0]) {
+            activeVillians.push(villians[0])
+            villians.splice(0, 1)
+        }
+    }
+    console.log(activeVillians, villians)
+    return {activeVillians:activeVillians, faceDownVillians: villians}
 }
 
 //game number
@@ -87,7 +111,7 @@ let hogwartsDeck = hogwartsCreator(gameNumber);
 
 
 //event deck creator
-function eventDeckCreator(game) {
+function eventDeckCreator(gameNumber) {
     let deck = []
     deck.push(eventCards.card1)
     deck.push(eventCards.card2)
@@ -99,7 +123,7 @@ const eventDeck = new eventDeckCreator(0);
 
 //create board
 const boardState = {
-    villians: [],
+    villians: villianAdder(gameNumber),
     eventDeck: eventDeck,
     location: locationCards.location1,
     locationCount: 1,

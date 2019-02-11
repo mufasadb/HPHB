@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ReactTable from "react-table";
 // import logo from './logo.svg';
 import './App.css';
 import Board from './components/board.js';
@@ -57,6 +58,7 @@ class App extends Component {
       .then(this.grabdetails())
   }
   grabdetails() {
+    console.log('fetching details')
     fetch('/players')
       .then(res => res.json())
       .then(wizards => this.setState({ wizards }, () => console.log("We've got the following wizards ", wizards)));
@@ -142,14 +144,23 @@ class App extends Component {
     if (this.state.alert.show) {
       alertObj = <div className='delete-button' onClick={() => { if (window.confirm('Yo, dis too many dolla')) this.onCancel() }} />
     }
+    const columns = [{
+      Header:'Board',
+      accessor: 'some content',
+      Cell: <Board board={this.state.board} />},
+      {
+        Header:'',
+        Cell: <Wizards playing={this.choiceHandler} wizards={this.state.wizards} activePlayer={this.state.board.activePlayer} />
+      }]
     return (
       <div className="App">
         <header className="App-header">
           {/* <img src={logo} className="App-logo" alt="logo" /> */}
           <h1 className="App-title"> HPHB</h1>
           <div className="game">
-            <Board board={this.state.board} />
-            <Wizards playing={this.choiceHandler} wizards={this.state.wizards} activePlayer={this.state.board.activePlayer} />
+            <ReactTable
+            columns={columns}
+            />
             <HogwartsCards buyCard={this.buyCard} hogwartsCards={this.state.hogwartsCards} />
             <ChoiceModal card={this.state.cardChoiceCard} unModal={this.setModal} play={this.choiceHandler.bind(this)} />
             {alertObj}

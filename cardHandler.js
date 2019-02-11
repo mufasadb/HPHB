@@ -33,11 +33,16 @@ module.exports = {
         return ([deck, hand, discardPile])
     },
     purchaseCard: function (board, players, hogwartsCards, cardUID) {
-        if (hogwartsCards.faceUpCards.findIndex(x => x.UID === cardUID)) {
+        console.log(cardUID);
+        console.log(hogwartsCards.faceUpCards.findIndex(x => x.UID === cardUID))
+        if ((hogwartsCards.faceUpCards.findIndex(x => x.UID === cardUID))) {
             let selectedIndex = hogwartsCards.faceUpCards.findIndex(x => x.UID === cardUID);
             let selectedCardPrice = parseInt(hogwartsCards.faceUpCards.find(x => x.UID === cardUID).value);
+            console.log(players[board.activePlayer].discardPile)
             players[board.activePlayer].discardPile.push(hogwartsCards.faceUpCards[selectedIndex]);
             hogwartsCards.faceUpCards.splice(selectedIndex, 1);
+            console.log(players[board.activePlayer].discardPile)
+
             players[board.activePlayer].gold = players[board.activePlayer].gold - selectedCardPrice
         }
         return [board, players, hogwartsCards]
