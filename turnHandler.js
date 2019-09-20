@@ -44,6 +44,10 @@ function turnDiscard(players, activePlayer){
         players[activePlayer].discardPile.push(players[activePlayer].hand[0])
         players[activePlayer].hand.splice(0,1)
     }
+    while(players[activePlayer].playedCards.length > 0){
+        players[activePlayer].discardPile.push(players[activePlayer].playedCards[0])
+        players[activePlayer].playedCards.splice(0,1)
+    }
     return players
 }
 module.exports = {

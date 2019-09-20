@@ -28,6 +28,7 @@ app.get('/hogwartsCards', (req, res) => {
     res.json(data);
 })
 app.post('/endTurn', function (req, res) {
+    let error = ""
     if (board.activePlayer < 0) {
         console.log('starting game')
     } else {
@@ -37,6 +38,7 @@ app.post('/endTurn', function (req, res) {
     board = results[0];
     players = results[1];
     hogwartsCards = results[2];
+    res.json(error);
 })
 app.post('/playcard', function (req, res) {
     let error = ""
@@ -44,7 +46,7 @@ app.post('/playcard', function (req, res) {
         error = "There was no active player"
         console.log("tryied to play a card, but the game hasn't started")
     } else {
-        console.log('playing card' + req.body.cardUID)
+        console.log('playing card' + req.body.IGID)
         let cardUID = req.body.cardUID;
         let actions = req.body.actions
         results = turnHandler.playCard(board, players, cardUID, actions);

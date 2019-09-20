@@ -1,4 +1,4 @@
-function shuffle(deck){
+function shuffle(deck) {
     let deckShuffled = [];
     let ogDeck = JSON.parse(JSON.stringify(deck));
     for (card in deck) {
@@ -22,20 +22,19 @@ module.exports = {
                     deck.splice(0, 1);
             } else {
                 deck = shuffle(discardPile);
-                discardPile.splice(0, discardPile.length)
                 hand.push(deck[0]),
-                    deck.splice(1, 1);
+                    deck.splice(0, 1);
+                discardPile.splice(0, discardPile.length)
             }
         }
-        // console.log('we have a deck of length', deck.length);
-        // console.log('we have a hand of length ', hand.length);
-        // console.log('we have a discardPile of length ', discardPile.length);
+
         return ([deck, hand, discardPile])
     },
     purchaseCard: function (board, players, hogwartsCards, cardUID) {
-        if (hogwartsCards.faceUpCards.findIndex(x => x.UID === cardUID)) {
-            let selectedIndex = hogwartsCards.faceUpCards.findIndex(x => x.UID === cardUID);
-            let selectedCardPrice = parseInt(hogwartsCards.faceUpCards.find(x => x.UID === cardUID).value);
+        if (hogwartsCards.faceUpCards.findIndex(x => x.UID === cardUID) >= 0) {
+            console.log("found the UID")
+            let selectedIndex = hogwartsCards.faceUpCards.findIndex(x => x.UID == cardUID);
+            let selectedCardPrice = parseInt(hogwartsCards.faceUpCards.find(x => x.UID == cardUID).value);
             players[board.activePlayer].discardPile.push(hogwartsCards.faceUpCards[selectedIndex]);
             hogwartsCards.faceUpCards.splice(selectedIndex, 1);
             players[board.activePlayer].gold = players[board.activePlayer].gold - selectedCardPrice

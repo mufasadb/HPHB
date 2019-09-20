@@ -21,7 +21,8 @@ class Wizards extends Component {
             wizardObj = this.props.wizards.map((wizard, i) => <div key={i} >{wizard.character}
                 has {wizard.health} health, {wizard.gold} gold, {wizard.lightning}
                 lightning, and has {wizard.discardPile.length} discarded cards
-        <Hand playing={this.props.playing} hand={wizard.hand} activePlayer={this.props.activePlayer} currentPlayer={wizard.number}/>
+                as well as {wizard.deck.length} cards in their deck
+        <Hand playing={this.props.playing} hand={wizard.hand} activePlayer={this.props.activePlayer} currentPlayer={i} doAlert={this.props.doAlert.bind(this)}/>
             </div>)
         }
         return (

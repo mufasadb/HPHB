@@ -7,9 +7,9 @@
         "cardType": "Spell",
         "UID": "1",
         "decisions": {
-            "exist": "False",
+            "exist": false,
             "options": [],
-            "text": ""
+            "text": []
         },
         "actionObjects" : [{
             "who": "Active",
@@ -28,9 +28,9 @@
         "cardType": "Ally",
         "UID": "2",
         "decisions": {
-            "exist": "False",
+            "exist": false,
             "options": [],
-            "text": ""
+            "text": []
         },
         "actionObjects" : [{
             "who": "Active",
@@ -49,9 +49,9 @@
         "cardType": "Ally",
         "UID": "3",
         "decisions": {
-            "exist": "False",
+            "exist": false,
             "options": [],
-            "text": ""
+            "text": []
         },
         "actionObjects" : [{
             "who": "Active",
@@ -70,9 +70,9 @@
         "cardType": "Spell",
         "UID": "4",
         "decisions": {
-            "exist": "False",
+            "exist": false,
             "options": [],
-            "text": ""
+            "text": []
         },
         "actionObjects" : [{
             "who": "Active",
@@ -91,9 +91,9 @@
         "cardType": "Item",
         "UID": "5",
         "decisions": {
-            "exist": "False",
+            "exist": false,
             "options": [],
-            "text": ""
+            "text": []
         },
         "actionObjects" : [{
             "who": "All",
@@ -112,9 +112,9 @@
         "cardType": "Item",
         "UID": "6",
         "decisions": {
-            "exist": "False",
+            "exist": true,
             "options": ["0,1", "2"],
-            "text": "gain 1 lightning and 1 heart or 2 lightning"
+            "text": ["gain 1 lightning and 1 heart", "gain 2 lightning"]
         },
         "actionObjects" : [{
             "who": "Active",
@@ -149,9 +149,9 @@
         "cardType": "Ally",
         "UID": "7",
         "decisions": {
-            "exist": "False",
+            "exist": false,
             "options": [],
-            "text": ""
+            "text": []
         },
         "actionObjects" : [{
             "who": "Location",
@@ -170,9 +170,9 @@
         "cardType": "Item",
         "UID": "8",
         "decisions": {
-            "exist": "False",
+            "exist": false,
             "options": [],
-            "text": ""
+            "text": []
         },
         "actionObjects" : [{
             "who": "Active",
@@ -191,9 +191,9 @@
         "cardType": "Ally",
         "UID": "9",
         "decisions": {
-            "exist": "False",
+            "exist": false,
             "options": [],
-            "text": ""
+            "text": []
         },
         "actionObjects" : [{
             "who": "Location",
@@ -212,9 +212,9 @@
         "cardType": "Item",
         "UID": "10",
         "decisions": {
-            "exist": "False",
+            "exist": false,
             "options": [],
-            "text": ""
+            "text": []
         },
         "actionObjects" : [{
             "who": "Active",
@@ -233,9 +233,9 @@
         "cardType": "Ally",
         "UID": "11",
         "decisions": {
-            "exist": "False",
+            "exist": false,
             "options": [],
-            "text": ""
+            "text": []
         },
         "actionObjects" : [{
             "who": "Active",
@@ -254,9 +254,9 @@
         "cardType": "Item",
         "UID": "12",
         "decisions": {
-            "exist": "False",
+            "exist": false,
             "options": [],
-            "text": ""
+            "text": []
         },
         "actionObjects" : [{
             "who": "Active",

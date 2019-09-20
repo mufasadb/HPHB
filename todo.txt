@@ -39,3 +39,8 @@ submit the card and the specified choice
     move the card to played
     run the actions
 re-render the board
+
+
+CleanupID Naming scheme
+generating non-unique IGID for hogwarts cards
+cards from discard aren't refilling

@@ -13,7 +13,7 @@ class HogwartsCards extends Component {
     render() {
         let theObject = ""
         if(this.props.hogwartsCards){
-        theObject = this.props.hogwartsCards.faceUpCards.map((card) => <div className="card" onClick={() => this.props.buyCard(card)} key={card.name}> {card.name}<br/>{card.value}</div>)
+        theObject = this.props.hogwartsCards.faceUpCards.map((card) => <div className="card" onClick={() => this.props.buyCard(card)} key={card.IGID}> {card.name}<br/>{card.value}</div>)
         }return (
             <div>
                 <div className="hogwartCardsContainer">

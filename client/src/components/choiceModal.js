@@ -9,24 +9,25 @@ class ChoiceModal extends Component {
     }
     render() {
         let showHideModal = "hideModal";
+        let buttons = ""
         if (this.props.showHideModal) {
             showHideModal = "showModal"
         }
-        let bontent = ""
-        if(typeof variable !== 'undefined'){
-            bontent = this.props.card.decisions.text
-        }
-        return (
+        if (this.props.card.decisions) {
+            console.log(this.props.card)
+            if (this.props.card.decisions.exist) {
+                buttons = this.props.card.decisions.text.map((i) => <button className="modalButton" onClick={(i) => { this.props.play(this.props.card, i) }}> {this.prop.card.decisions.text[i]} </button>)
+            }
+        } return (
+            // <div className={showHideModal}>
             <div className={showHideModal}>
                 here's youre elaborate quesition
-                {bontent}
-                <button>
-                    onClick = {this.props.play(this.props.card, 0)}
-                </button>
-                <button>
-                    onClick = {this.props.play(this.props.card, 1)}
-                </button>
-
+                <div className="modalContent">
+                    <p>some actual codntent</p>
+                    <div className="buttonWrapper">
+                        {buttons}
+                    </div>
+                </div>
             </div>
         );
     }

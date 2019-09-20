@@ -4,11 +4,15 @@ const hogwartsCards = require('./hogwartsCardDecleration.json');
 const locationCards = require('./locationDecleration.json');
 const eventCards = require('./eventDecleration.json');
 const cardHandler = require('./cardHandler.js');
+let currentGameCardCount = 0;
 
 function cardCopier(variable) {
-    let results = JSON.parse(JSON.stringify(variable));
+    let results = JSON.parse(JSON.stringify(variable))
+    results.IGID = currentGameCardCount
+    currentGameCardCount++
+    console.log('card ' + results.UID + ' is now the ' + currentGameCardCount + 'th card')
     return results
-}
+};
 
 //Player Setup
 function playerCardSetup(character) {
@@ -19,11 +23,11 @@ function playerCardSetup(character) {
     switch (character) {
         case "Ron":
             deck.push(cardCopier(hogwartsCards.card3));
-            deck.push(hogwartsCards.card3);
+            deck.push(cardCopier(hogwartsCards.card3));
             break;
         case "Harry":
-            deck.push(cardCopier(hogwartsCards.card2));
-            deck.push(cardCopier(hogwartsCards.card2));
+            deck.push(cardCopier(hogwartsCards.card6));
+            deck.push(cardCopier(hogwartsCards.card6));
             break;
         case "Hermoine":
             break;
@@ -74,7 +78,7 @@ function hogwartsCreator(game) {
         }
     }
     let deckCount = results.length
-    return {faceUpCards:faceUpCards, deckCount: deckCount, faceDownCards: faceDownCards}
+    return { faceUpCards: faceUpCards, deckCount: deckCount, faceDownCards: faceDownCards }
 }
 
 //game number
